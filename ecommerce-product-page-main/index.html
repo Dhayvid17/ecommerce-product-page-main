@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <div class="logo">
+          <img class="icon-menu" src="images/icon-menu.svg" alt="">
+          <img class="icon-logo" src="images/logo.svg" alt="logo">
+      </div>
+      <div class="list-style">
+        <img class="icon-cancel" src="images/icon-close.svg" alt="close">
+        <ul>
+          <li>Collections</li>
+          <li>Men</li>
+          <li>Women</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+
+      <div class="cart-images">
+        <span class="no-items"></span>
+        <img class="icon-cart" src="images/icon-cart.svg" alt="cart">
+        <img class="avatar" src="images/image-avatar.png" alt="avatar">
+      </div>
+      <div class="aside-i">
+        <p class="cart">Cart</p>
+        <p class="empty">Your cart is empty.</p>
+      </div>
+
+      <div class="aside-ii">
+        <p class="cart">Cart</p>
+        <div class="flex-aside">
+          <img class="aside-image" src="images/image-product-1-thumbnail.jpg" alt="">
+          <p>Fall Limited Edition Sneakers<span class="bloc">$125.00 x <span class="quantity"></span><span
+                class="space">$</span><span class="actual-price"></span><span class="decimal">.00</span></p>
+          <div>
+            <img class="clear" src="images/icon-delete.svg" alt="icon-delete">
+          </div>
+        </div>
+        <input type="button" id="button" name="button" value="Checkout">
+      </div>
+    </header>
+
+    <nav>
+      <div class="images-container">
+        <div class="big-images">
+          <img class="bigger-image" id="chosen" src="images/image-product-1.jpg" alt="">
+          <img class="bigger-image" src="images/image-product-2.jpg" alt="">
+          <img class="bigger-image" src="images/image-product-3.jpg" alt="">
+          <img class="bigger-image" src="images/image-product-4.jpg" alt="">
+        </div>
+        <div class="mobile-images">
+          <img class="mobile-image" src="images/image-product-1.jpg" id="image-1" alt="">
+          <img class="mobile-image" src="images/image-product-2.jpg" alt="">
+          <img class="mobile-image" src="images/image-product-3.jpg" alt="">
+          <img class="mobile-image" src="images/image-product-4.jpg" alt="">
+          <div class="toggle-box">
+            <div class="prev-box">
+              <img class="mobile-prev" src="images/icon-previous.svg" alt="">
+            </div>
+            <div class="next-box">
+              <img class="mobile-next" src="images/icon-next.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="thumbnail-container">
+          <img class="thumbnail" id="selected" src="images/image-product-1-thumbnail.jpg" alt=""
+            onclick="toggleImage(this)">
+          <img class="thumbnail" src="images/image-product-2-thumbnail.jpg" alt="" onclick="toggleImage(this)">
+          <img class="thumbnail" src="images/image-product-3-thumbnail.jpg" alt="" onclick="toggleImage(this)">
+          <img class="thumbnail" src="images/image-product-4-thumbnail.jpg" alt="" onclick="toggleImage(this)">
+        </div>
+      </div>
+
+      <div class="content">
+        <p class="text-header">Sneaker Company</p>
+
+        <h4>Fall Limited Edition Sneakers</h4>
+        <p class="paras">These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="price">
+          <p class="crnt-price">$125.00</p>
+          <p class="span">50%</p>
+          <p class="fmr-price">$250.00</p>
+        </div>
+        
+        <div class="index-container">
+          <div class="index-box">
+            <div class="minus">
+              <img src="images/icon-minus.svg" alt="icon-minus">
+            </div>
+            <span class="index">0</span>
+            <div class="plus">
+              <img src="images/icon-plus.svg" alt="icon-plus">
+            </div>
+          </div>
+          <div class="submit">
+            <p><img src="images/icon-cart.svg" alt=""><span>Add to cart</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="overall">
+        <div class="light-box-container">
+          <img class="close" src="images/icon-close.svg" alt="">
+          <div class="zoom-images">
+            <img class="light-box-image" id="display" src="images/image-product-1.jpg" alt="">
+            <img class="light-box-image" src="images/image-product-2.jpg" alt="">
+            <img class="light-box-image" src="images/image-product-3.jpg" alt="">
+            <img class="light-box-image" src="images/image-product-4.jpg" alt="">
+
+            <div class="prev-box">
+              <img class="prev" src="images/icon-previous.svg" alt="">
+            </div>
+            <div class="next-box">
+              <img class="next" src="images/icon-next.svg" alt="">
+            </div>
+          </div>
+
+          <div class="flex-images">
+            <img class="lightbox-flex" src="images/image-product-1-thumbnail.jpg" alt="" onclick="toggleFlex(this)">
+            <img class="lightbox-flex" src="images/image-product-2-thumbnail.jpg" alt="" onclick="toggleFlex(this)">
+            <img class="lightbox-flex" src="images/image-product-3-thumbnail.jpg" alt="" onclick="toggleFlex(this)">
+            <img class="lightbox-flex" src="images/image-product-4-thumbnail.jpg" alt="" onclick="toggleFlex(this)">
+          </div>
+        </div>
+      </div>
+    </nav>
+  </main>
+
+
+
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="sandbox.js"></script>
+</body>
+
+</html>
